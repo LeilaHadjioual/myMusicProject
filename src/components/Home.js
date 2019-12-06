@@ -7,13 +7,6 @@ import * as ApiCall from '../components/apiCall/ApiCall';
 import {Link} from 'react-router-dom';
 import './Home.scss';
 
-
-//
-// const API = "";
-// const GIST = "";
-// const TOKEN = "";
-
-
 class Home extends React.Component {
     constructor(props) {
         super(props)
@@ -42,27 +35,6 @@ class Home extends React.Component {
 
 
     };
-
-    // let url = `${API}/gist/${GIST}`;
-        // fetch(url, {
-        //     method: 'PATCH',
-        //     headers: {
-        //         'Authorization': 'token' + TOKEN,
-        //     },
-        //     body: JSON.stringify({
-        //         files: {
-        //             'playlist': {
-        //                 content: JSON.stringify({
-        //                     albums: this.state.album,
-        //                 })
-        //             }
-        //         }
-        //     })
-        //
-        // })
-        //     .then(res => console.log(res))
-        //     .catch(error => console.log(error));
-
 
     renderAlbums = () => {
         const {albums} = this.state;
@@ -98,10 +70,9 @@ class Home extends React.Component {
     };
 
     render() {
-        //console.log(this.state)
         return (
             <div className="">
-                <Header/>
+                {/*<Header/>*/}
                 <div className="container">
                     <div className="row">
                         <div className="col-md-10 mx-auto">
