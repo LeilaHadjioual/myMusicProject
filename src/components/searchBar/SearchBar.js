@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 
 
@@ -23,7 +23,7 @@ class SearchBar extends React.Component {
     };
 
     render() {
-        console.log(this.state);
+       // console.log(this.state);
         return (
             <div className="search mb-2 mt-4">
                 <form onSubmit={(event) => this.submitSearch(event)}>
@@ -38,7 +38,7 @@ class SearchBar extends React.Component {
                         </div>
                         <div className="col-mt-2">
                             <div className="form-group">
-                                <button type='submit' className="btn btn-secondary">
+                                <button data-testid="button" type='submit' className="btn btn-secondary">
                                     <SearchIcon/>
                                 </button>
                             </div>

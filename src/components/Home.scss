@@ -3,6 +3,19 @@ body{
 
 }
 
+.container{
+  margin-top:5em;
+}
+
+/*-----card-----*/
+.card-body{
+  padding:0.5em;
+}
+
+.card{
+  height: 100%;
+}
+
 /*-----icons-----*/
 .links{
   display:flex;
@@ -22,10 +35,13 @@ body{
 
 }
 
-
-.card{
-  height: 100%;
+.toggled {
+  background-color: red;
 }
+.untoggled {
+  background-color:blue;
+}
+
 
 /*-----input search-----*/
 .search .form-group {

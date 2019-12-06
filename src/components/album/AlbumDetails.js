@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import * as ApiCall from '../apiCall/ApiCall';
 import Header from '../widget/Header';
-import {Link} from "react-router-dom";
-import AddOutlinedIcon from "@material-ui/core/SvgIcon/SvgIcon";
+import './AlbumDetails.scss';
+
 
 class AlbumDetails extends React.Component {
     constructor(props) {
@@ -28,13 +28,14 @@ class AlbumDetails extends React.Component {
         const {tracks} = this.state;
         return tracks && tracks.length ?
             tracks.map((track, index) => (
-                <div key={index}>
+                <div className="track" key={index}>
                     <p>{track.title}</p>
                     <audio controls src={track.preview}>
                         Le navigateur ne supporte pas l'audio html
                     </audio>
-                    <hr/>
                     <br/>
+                    <hr/>
+
                 </div>
 
             ))
@@ -55,9 +56,8 @@ class AlbumDetails extends React.Component {
                             {album.title}
                         </div>
                     </div>
-
                 </div>
-                <div className="">
+                <div className="tracks">
                     {this.renderTracks()}
                 </div>
             </div>

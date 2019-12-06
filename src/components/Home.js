@@ -1,19 +1,26 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import Header from '../components/widget/Header';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import SearchBar from '../components/searchBar/SearchBar';
 import * as ApiCall from '../components/apiCall/ApiCall';
 import {Link} from 'react-router-dom';
-import './Home.scss'
+import './Home.scss';
+
+
+//
+// const API = "";
+// const GIST = "";
+// const TOKEN = "";
+
 
 class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            albums: []
-        }
+            albums: [],
+            //myPlaylist: [],
+        };
     };
 
     componentDidMount() {
@@ -22,15 +29,44 @@ class Home extends React.Component {
         }));
     }
 
-//recherche les albums de l'artiste inséré
+//recherche albums/artist/chanson contenant la valeur insérée
     searchArtist = (myValue) => {
         ApiCall.getAlbums(myValue).then(item => this.setState({
             albums: item
         }))
-    }
+    };
+
+    addPlaylist () {
+        console.log("ajouter  à la playlist");
+
+
+
+    };
+
+    // let url = `${API}/gist/${GIST}`;
+        // fetch(url, {
+        //     method: 'PATCH',
+        //     headers: {
+        //         'Authorization': 'token' + TOKEN,
+        //     },
+        //     body: JSON.stringify({
+        //         files: {
+        //             'playlist': {
+        //                 content: JSON.stringify({
+        //                     albums: this.state.album,
+        //                 })
+        //             }
+        //         }
+        //     })
+        //
+        // })
+        //     .then(res => console.log(res))
+        //     .catch(error => console.log(error));
+
 
     renderAlbums = () => {
         const {albums} = this.state;
+        //ternaire: si pas d'albums ou album contient rien return null
         return albums && albums.length ?
             albums.map((item, index) => (
                     <div key={index} className="col-md-4 mb-2">
@@ -41,15 +77,16 @@ class Home extends React.Component {
                                     {item.artist.name}
                                 </span>
                                 <div className="card-title">
-                                    {item.album.title}
+                                    {item.title}
                                 </div>
                             </div>
                             <div className="footer">
                                 <div className="links">
-                                    <Link to={`/details/${item.album.id}`} className="link" href="#">
+                                    <Link to={`/details/${item.album.id}`} className="link">
                                         <AddOutlinedIcon/>
                                     </Link>
-                                    <a className="link" href="#">
+
+                                    <a className="link" onClick={this.addPlaylist} href="#">
                                         <FavoriteIcon/>
                                     </a>
                                 </div>
@@ -61,7 +98,7 @@ class Home extends React.Component {
     };
 
     render() {
-        console.log(this.state)
+        //console.log(this.state)
         return (
             <div className="">
                 <Header/>

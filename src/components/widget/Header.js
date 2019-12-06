@@ -1,12 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-
 
 const Header = () => {
         return(
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" href="/">App Music</a>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <a className="navbar-brand" href="#">App Music</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -16,10 +14,10 @@ const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+                            <a className="nav-link" href="/">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">My PlayList</a>
+                            <a className="nav-link" href="/myplaylist">My PlayList</a>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -27,8 +25,8 @@ const Header = () => {
                                 <AccountCircleIcon/>
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="#">Log in</a>
-                                <a className="dropdown-item" href="#">Sign in</a>
+                                <a className="dropdown-item" href="/connexion">Log in</a>
+                                <a className="dropdown-item" href="/compte">Sign in</a>
                                 {/*<div className="dropdown-divider"></div>*/}
                                 {/*<a className="dropdown-item" href="#">Something else here</a>*/}
                             </div>

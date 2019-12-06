@@ -8,6 +8,14 @@ const request = axios.create({
     headers: {'x-rapidapi-key': API_KEY}
 });
 
+
+export function getArtist(search=''){
+    const artist = request.get( `/artist/${search}`)
+        .then(response => response.data)
+        .catch(error => console.log(error))
+    return artist
+}
+
 export function getAlbums(search='') {
     const albums = request.get(`search?q=${search}`)
         .then(response => response.data.data)
