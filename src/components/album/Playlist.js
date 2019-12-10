@@ -23,7 +23,7 @@ class Playlist extends React.Component {
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                                <h5 className="card-title">NOM artiste</h5>
+                                <h5 className="card-title" data-test-id2 = "text2">NOM artiste</h5>
                                 <p className="card-text">nom album</p>
                                 <Link to={`/details/69348022`} className="card-text">Ecouter</Link>
                             </div>
