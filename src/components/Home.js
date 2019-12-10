@@ -3,12 +3,14 @@ import * as ApiCall from '../components/apiCall/ApiCall';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Header from '../components/widget/Header';
+import Slider from '../components/widget/Slider';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import SearchBar from '../components/searchBar/SearchBar';
 
 import './Home.scss';
 import {addAlbumToPLaylist} from "../store/Action";
+
 
 
 
@@ -90,10 +92,23 @@ class Home extends React.Component {
     };
 
     render() {
+
         // console.log(this.props);
         return (
             <div className="">
                 <Header/>
+
+         let genres = [
+         {img: '/img/banner1.jpg'},
+         {img: '/img/banner2.jpg'},
+         {img: '/img/banner3.jpg'}
+     ];
+
+        return (
+            <div className="">
+                {<Header/>}
+                 <Slider genres={genres}/>
+
                 <div className="container">
                     <div className="row">
                         <div className="col-md-10 mx-auto">

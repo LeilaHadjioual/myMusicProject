@@ -30,10 +30,12 @@ class SearchBar extends React.Component {
                     <div className="row">
                         <div className="col-md-10">
                             <div className="form-group">
+                               
                                 <input value={this.state.myValue}
                                        onChange={(event) => this.onChangedInput(event)}
                                        type="text" placeholder="Rechercher..."
                                        className="form-control"/>
+                                        <h3 data-test-id='search'>Rechercher</h3>
                             </div>
                         </div>
                         <div className="col-mt-2">
