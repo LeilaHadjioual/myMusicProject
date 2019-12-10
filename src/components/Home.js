@@ -1,11 +1,13 @@
 import React from 'react';
 import Header from '../components/widget/Header';
+import Slider from '../components/widget/Slider';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import SearchBar from '../components/searchBar/SearchBar';
 import * as ApiCall from '../components/apiCall/ApiCall';
 import {Link} from 'react-router-dom';
 import './Home.scss';
+
 
 class Home extends React.Component {
     constructor(props) {
@@ -70,9 +72,16 @@ class Home extends React.Component {
     };
 
     render() {
+         let genres = [
+         {img: '/img/banner1.jpg'},
+         {img: '/img/banner2.jpg'},
+         {img: '/img/banner3.jpg'}
+     ];
+
         return (
             <div className="">
-                {/*<Header/>*/}
+                {<Header/>}
+                 <Slider genres={genres}/>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-10 mx-auto">
