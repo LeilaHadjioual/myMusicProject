@@ -55,7 +55,7 @@ class Slider extends React.Component {
     render() {
         const genres = this.props.genres;
         const listItem = genres.map((item, index) =>
-            <li>
+           <li>
                 {genres[this.state.indice].name}
                 <img src={genres[this.state.indice].img}/>
             </li>
@@ -64,13 +64,12 @@ class Slider extends React.Component {
             <div className="container">
                 <div className="row">
 
-                <ArrowBackIosIcon className="arrow" onClick={this.prevSlide}/>
+                <ArrowBackIosIcon className="arrow arrow-left" onClick={this.prevSlide}/>
                 <ul className="slides">
                     {listItem}
                 </ul>
-                <ArrowForwardIosIcon className="arrow" onClick={this.nextSlide}/>
-                {/*<a className="arrow arrow-left"></a>*/}
-                {/*<a className="arrow arrow-right" onClick={this.nextSlide}> </a>*/}
+                <ArrowForwardIosIcon className="arrow arrow-right" onClick={this.nextSlide}/>
+              
             </div>
             </div>
         );
