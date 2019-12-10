@@ -9,14 +9,14 @@ const request = axios.create({
 });
 
 
-export function getArtist(search=''){
-    const artist = request.get( `/artist/${search}`)
-        .then(response => response.data)
-        .catch(error => console.log(error))
-    return artist
-}
+// export function getArtist(search=''){
+//     const artist = request.get( `/artist/${search}`)
+//         .then(response => response.data)
+//         .catch(error => console.log(error))
+//     return artist
+// }
 
-export function getAlbums(search='') {
+export function getAlbums(search='queen') {
     const albums = request.get(`search?q=${search}`)
         .then(response => response.data.data)
         .catch(error => console.log(error))

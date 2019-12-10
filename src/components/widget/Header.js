@@ -1,5 +1,6 @@
 import React from 'react';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import {Link} from "react-router-dom";
 
 const Header = () => {
         return(
@@ -13,23 +14,11 @@ const Header = () => {
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="/">Home</a>
+                        <li className="nav-item ">
+                            <Link className="nav-link" to="/">Home</Link>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/myplaylist">My PlayList</a>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <AccountCircleIcon/>
-                            </a>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="/connexion">Log in</a>
-                                <a className="dropdown-item" href="/compte">Sign in</a>
-                                {/*<div className="dropdown-divider"></div>*/}
-                                {/*<a className="dropdown-item" href="#">Something else here</a>*/}
-                            </div>
+                        <li className="nav-item ">
+                            <Link className="nav-link" to="/myplaylist">My PlayList</Link>
                         </li>
                     </ul>
                 </div>

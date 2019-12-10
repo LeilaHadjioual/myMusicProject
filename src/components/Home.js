@@ -1,11 +1,16 @@
 import React from 'react';
+import * as ApiCall from '../components/apiCall/ApiCall';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import Header from '../components/widget/Header';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import SearchBar from '../components/searchBar/SearchBar';
-import * as ApiCall from '../components/apiCall/ApiCall';
-import {Link} from 'react-router-dom';
+
 import './Home.scss';
+import {addAlbumToPLaylist} from "../store/Action";
+
+
 
 class Home extends React.Component {
     constructor(props) {
@@ -14,7 +19,27 @@ class Home extends React.Component {
             albums: [],
             //myPlaylist: [],
         };
+
     };
+
+
+    // componentDidMount() {
+    //     fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${"queen"}`, {
+    //         headers: {'x-rapidapi-key': API_KEY}
+    //     })
+    //         .then(res => res.json())
+    //         .then(json => {
+    //             const albums = json.data;
+    //             console.log(json)
+    //             albums.forEach(album => {
+    //                 this.props.myPlaylist({
+    //                     artist: album.artist.name,
+    //                     picture: album.artist.picture_big,
+    //                     title: album.title
+    //                 })
+    //             })
+    //         });
+    // }
 
     componentDidMount() {
         ApiCall.getAlbums().then(item => this.setState({
@@ -27,14 +52,9 @@ class Home extends React.Component {
         ApiCall.getAlbums(myValue).then(item => this.setState({
             albums: item
         }))
-    };
-
-    addPlaylist () {
-        console.log("ajouter  à la playlist");
-
-
 
     };
+
 
     renderAlbums = () => {
         const {albums} = this.state;
@@ -49,7 +69,7 @@ class Home extends React.Component {
                                     {item.artist.name}
                                 </span>
                                 <div className="card-title">
-                                    {item.title}
+                                    {item.album.title}
                                 </div>
                             </div>
                             <div className="footer">
@@ -58,7 +78,7 @@ class Home extends React.Component {
                                         <AddOutlinedIcon/>
                                     </Link>
 
-                                    <a className="link" onClick={this.addPlaylist} href="#">
+                                    <a className="link" onClick={() => this.props.myPlaylist(item)} href="#">
                                         <FavoriteIcon/>
                                     </a>
                                 </div>
@@ -70,9 +90,10 @@ class Home extends React.Component {
     };
 
     render() {
+        // console.log(this.props);
         return (
             <div className="">
-                {/*<Header/>*/}
+                <Header/>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-10 mx-auto">
@@ -89,4 +110,30 @@ class Home extends React.Component {
 
 }
 
-export default Home;
+//dès que le store et le state de l'application vont être mis à jour par les actions,
+// const mapStateToProps = (state) => {
+//     return {
+//         favoriteAlbums: state.favoriteAlbums
+//     }
+// };
+
+
+function mapDispatchToProps(dispatch) {
+    const props = {
+        myPlaylist: album => {
+            console.log(album);
+            const album2 = {
+                artist: album.artist.name,
+                picture: album.artist.picture_big,
+                title: album.album.title
+            };
+            dispatch(addAlbumToPLaylist(album2))
+        },
+    };
+    return props;
+
+}
+
+export default connect(null, mapDispatchToProps)(Home);
+
+
