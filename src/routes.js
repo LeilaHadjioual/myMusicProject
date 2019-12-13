@@ -13,8 +13,8 @@ const Routes = () => {
             <Route path="/" exact component={Home}/>
             <Route path={'/details/:id'} exact component={AlbumDetails}/>
             <Route path={'/myplaylist'} exact component={Playlist}/>
-            <Route path={'/compte'} exact component={SignIn}/>
-            <Route path={'/connexion'} exact component={LogIn}/>
+            {/*<Route path={'/compte'} exact component={SignIn}/>*/}
+            {/*<Route path={'/connexion'} exact component={LogIn}/>*/}
 
         </Switch>
     );

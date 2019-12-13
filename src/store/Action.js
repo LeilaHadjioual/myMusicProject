@@ -1,5 +1,5 @@
 
-let nextAlbumId = 0;
+
 
 export function addAlbumToPLaylist(album) {
     const action = {
@@ -7,7 +7,7 @@ export function addAlbumToPLaylist(album) {
         artist: album.artist,
         title: album.title,
         picture: album.picture,
-        id: nextAlbumId++
+        id: album.id
     }
     return action;
 }

@@ -35,7 +35,6 @@ class AlbumDetails extends React.Component {
                     </audio>
                     <br/>
                     <hr/>
-
                 </div>
 
             ))

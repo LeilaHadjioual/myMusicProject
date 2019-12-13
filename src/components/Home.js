@@ -12,8 +12,6 @@ import './Home.scss';
 import {addAlbumToPLaylist} from "../store/Action";
 
 
-
-
 class Home extends React.Component {
     constructor(props) {
         super(props)
@@ -79,7 +77,6 @@ class Home extends React.Component {
                                     <Link to={`/details/${item.album.id}`} className="link">
                                         <AddOutlinedIcon/>
                                     </Link>
-
                                     <a className="link" onClick={() => this.props.myPlaylist(item)} href="#">
                                         <FavoriteIcon/>
                                     </a>
@@ -92,33 +89,30 @@ class Home extends React.Component {
     };
 
     render() {
-
-        // console.log(this.props);
+        let genres = [
+            {img: '/img/banner1.jpg'},
+            {img: '/img/banner2.jpg'},
+            {img: '/img/banner3.jpg'}
+        ];
         return (
             <div className="">
                 <Header/>
+                <div className="">
+                    <Header/>
+                    <Slider genres={genres}/>
 
-         let genres = [
-         {img: '/img/banner1.jpg'},
-         {img: '/img/banner2.jpg'},
-         {img: '/img/banner3.jpg'}
-     ];
-
-        return (
-            <div className="">
-                {<Header/>}
-                 <Slider genres={genres}/>
-
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-10 mx-auto">
-                            <SearchBar searchArtist={this.searchArtist}/>
-                            <div className="row ">
-                                {this.renderAlbums()}
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-10 mx-auto">
+                                <SearchBar searchArtist={this.searchArtist}/>
+                                <div className="row ">
+                                    {this.renderAlbums()}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         )
     }
@@ -136,11 +130,13 @@ class Home extends React.Component {
 function mapDispatchToProps(dispatch) {
     const props = {
         myPlaylist: album => {
-            console.log(album);
+            //console.log(album);
             const album2 = {
                 artist: album.artist.name,
-                picture: album.artist.picture_big,
-                title: album.album.title
+                picture: album.album.cover_big,
+                title: album.album.title,
+                id: album.album.id
+
             };
             dispatch(addAlbumToPLaylist(album2))
         },
