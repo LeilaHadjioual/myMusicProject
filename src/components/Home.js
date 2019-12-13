@@ -94,20 +94,21 @@ class Home extends React.Component {
             {img: '/img/banner2.jpg'},
             {img: '/img/banner3.jpg'}
         ];
-        return (
-            <div className="">
-                <Header/>
-                <div className="">
-                    <Header/>
-                    <Slider genres={genres}/>
 
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-10 mx-auto">
-                                <SearchBar searchArtist={this.searchArtist}/>
-                                <div className="row ">
-                                    {this.renderAlbums()}
-                                </div>
+     
+        return (
+       
+            <div className="">
+                {<Header/>}
+                 <Slider genres={genres}/>
+
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-10 mx-auto">
+                            <SearchBar searchArtist={this.searchArtist}/>
+                            <div className="row ">
+                                {this.renderAlbums()}
+
                             </div>
                         </div>
                     </div>
