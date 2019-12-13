@@ -77,9 +77,9 @@ class Home extends React.Component {
                                     <Link to={`/details/${item.album.id}`} className="link">
                                         <AddOutlinedIcon/>
                                     </Link>
-                                    <a className="link" onClick={() => this.props.myPlaylist(item)} href="#">
+                                    <Link className="link" onClick={() => this.props.myPlaylist(item)} href="#">
                                         <FavoriteIcon/>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -95,9 +95,7 @@ class Home extends React.Component {
             {img: '/img/banner3.jpg'}
         ];
 
-     
         return (
-       
             <div className="">
                 {<Header/>}
                  <Slider genres={genres}/>
@@ -108,7 +106,6 @@ class Home extends React.Component {
                             <SearchBar searchArtist={this.searchArtist}/>
                             <div className="row ">
                                 {this.renderAlbums()}
-
                             </div>
                         </div>
                     </div>
@@ -120,12 +117,6 @@ class Home extends React.Component {
 
 }
 
-//dès que le store et le state de l'application vont être mis à jour par les actions,
-// const mapStateToProps = (state) => {
-//     return {
-//         favoriteAlbums: state.favoriteAlbums
-//     }
-// };
 
 
 function mapDispatchToProps(dispatch) {

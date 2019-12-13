@@ -35,7 +35,7 @@ class SearchBar extends React.Component {
                                        onChange={(event) => this.onChangedInput(event)}
                                        type="text" placeholder="Rechercher..."
                                        className="form-control"/>
-                                        <h3 data-test-id='search'>Rechercher</h3>
+                                        {/*<h3 data-test-id='search'>Rechercher</h3>*/}
                             </div>
                         </div>
                         <div className="col-mt-2">
