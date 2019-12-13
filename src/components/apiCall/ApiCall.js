@@ -16,7 +16,7 @@ const request = axios.create({
 //     return artist
 // }
 
-export function getAlbums(search='queen') {
+export function getAlbums(search='') {
     const albums = request.get(`search?q=${search}`)
         .then(response => response.data.data)
         .catch(error => console.log(error))

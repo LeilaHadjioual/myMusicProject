@@ -92,19 +92,14 @@ class Home extends React.Component {
     };
 
     render() {
-
-        // console.log(this.props);
+        let genres = [
+            {img: '/img/banner1.jpg'},
+            {img: '/img/banner2.jpg'},
+            {img: '/img/banner3.jpg'}
+        ];
+     
         return (
-            <div className="">
-                <Header/>
-
-         let genres = [
-         {img: '/img/banner1.jpg'},
-         {img: '/img/banner2.jpg'},
-         {img: '/img/banner3.jpg'}
-     ];
-
-        return (
+       
             <div className="">
                 {<Header/>}
                  <Slider genres={genres}/>
