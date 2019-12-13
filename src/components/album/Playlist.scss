@@ -1,3 +1,20 @@
+
+
 .card{
   max-width:540px;
+  background-color: black;
+}
+.cardSize{
+  margin-bottom: 1em;
+}
+
+.card-container{
+  margin-top:2em;
+
+}
+
+.card-body{
+  h5, p{
+    color:white;
+  }
 }

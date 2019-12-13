@@ -55,7 +55,7 @@ class Slider extends React.Component {
     render() {
         const genres = this.props.genres;
         const listItem = genres.map((item, index) =>
-           <li>
+           <li key={index}>
                 {genres[this.state.indice].name}
                 <img src={genres[this.state.indice].img}/>
             </li>

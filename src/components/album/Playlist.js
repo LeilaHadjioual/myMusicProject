@@ -8,13 +8,12 @@ import './Playlist.scss';
 class Playlist extends React.Component {
 
     render() {
-
         return (
             <div>
                 <Header />
                 <div className="card container">
                     {this.props.albums.map((album, index) => (
-                        <div className="row no-gutters" key={index}>
+                        <div className="row no-gutters cardSize" key={index}>
                             <div className="col-md-4">
                                 <img src={album.picture} alt={album.artist} className="card-img" />
                             </div>
@@ -22,7 +21,7 @@ class Playlist extends React.Component {
                                 <div className="card-body">
                                     <h5 className="card-title">{album.artist}</h5>
                                     <p className="card-text">{album.title}</p>
-                                    <Link to={`/details/69348022`} className="card-text">Ecouter</Link>
+                                    <Link to={`/details/${album.id}`} className="card-text">Ecouter</Link>
 
                                 </div>
                             </div>
@@ -31,6 +30,8 @@ class Playlist extends React.Component {
 
                 </div>
             </div>
+
+
 
 
         )
