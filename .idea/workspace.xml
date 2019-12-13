@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="948e1b78-dc7b-48b7-b567-9d44728061cf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/album/AlbumDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/album/AlbumDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/album/Playlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/album/Playlist.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/album/Playlist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/album/Playlist.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/widget/Slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widget/Slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/Action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/Action.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -104,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/album/Playlist.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -343,12 +336,12 @@
       <workItem from="1575980961886" duration="18554000" />
       <workItem from="1576064674347" duration="1453000" />
       <workItem from="1576192995478" duration="1641000" />
-      <workItem from="1576235752008" duration="1684000" />
+      <workItem from="1576235752008" duration="3119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106780000" />
+    <option name="totallyTimeSpent" value="108215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -586,7 +579,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/album/Playlist.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
