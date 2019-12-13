@@ -94,7 +94,7 @@ class Home extends React.Component {
             {img: '/img/banner2.jpg'},
             {img: '/img/banner3.jpg'}
         ];
-<<<<<<< HEAD
+
      
         return (
        
